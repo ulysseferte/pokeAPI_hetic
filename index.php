@@ -12,8 +12,13 @@
 
 // $image = $result->sprites->back_default;
 
+//creating the variable as a global because using it in my 'stats' class's function
+global $result;
+
+//if no color is selected, $color=null.
 $color = !empty($_GET['color']) ? $_GET['color'] : null;
 
+// only works if a color is selected
 if(!empty($_GET['color']))
 {
 //display pokemon with the correct color
@@ -32,8 +37,8 @@ if(!empty($_GET['color']))
     $i = 0;
     $pokemonName = $image[$i]->name;
 
-    echo $pokemonName;
-    
+    //renvoie le nombre de pokémons dans le tableau pokemons_species?color=$color
+    echo count($image);
 
     
     // Instantiate curl
@@ -44,6 +49,7 @@ if(!empty($_GET['color']))
     curl_close($curl);
     
     // Json decode
+    
     $result = json_decode($result);
 
     // echo '<pre>';
@@ -56,7 +62,34 @@ if(!empty($_GET['color']))
     $name = $result->name;
     $id = $result->id;
     $type = $result->types[0]->type->name;
+    class stats
+    {
+        public $_speed;
+        public $_defense_spe;
+        public $_attack_spe;
+        public $_defense;
+        public $_attack;
+        public $_health_points;
 
+        public function updateStats()
+        {
+            global $result;
+            $this->_speed = $result->stats[0]->base_stat;
+            $this->_defense_spe = $result->stats[1]->base_stat;
+            $this->_attack_spe = $result->stats[2]->base_stat;
+            $this->_defense = $result->stats[3]->base_stat;
+            $this->_attack = $result->stats[4]->base_stat;
+            $this->_health_points = $result->stats[5]->base_stat;
+        }
+    }
+    
+    $stats = new stats;
+    $stats->updateStats();
+    
+    // echo '<pre>';
+    // // print_r($stats->_speed);
+    // print_r($stats);
+    // echo '<pre>';
 }
 ?>
 <!DOCTYPE html>
