@@ -71,6 +71,7 @@ if(!empty($_GET['color']))
         public $_attack;
         public $_health_points;
 
+        // Fill a object with the '$result' pokémon stats.
         public function updateStats()
         {
             global $result;
@@ -82,14 +83,17 @@ if(!empty($_GET['color']))
             $this->_health_points = $result->stats[5]->base_stat;
         }
     }
-    
+    // Create a new object and filling it with $result stats
     $stats = new stats;
-    $stats->updateStats();
-    
-    // echo '<pre>';
-    // // print_r($stats->_speed);
-    // print_r($stats);
-    // echo '<pre>';
+    $stats->updateStats();   
+    echo '<pre>';
+    // print_r($stats->_speed);
+    print_r($stats);
+    echo '<pre>';
+    echo '</br>';
+    for ($i=0; $i < count($result->game_indices); $i++) { 
+       echo $result->game_indices[$i]->version->name.'</br>';
+    } 
 }
 ?>
 <!DOCTYPE html>
