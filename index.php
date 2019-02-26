@@ -32,13 +32,16 @@ if(!empty($_GET['color']))
     // Json decode
     $result = json_decode($result);
 
-    $image = $result->pokemon_species;
+    $pokemon_list_color = $result->pokemon_species;
+    $pokemon_list_color_length = count($pokemon_list_color);
 
     $i = 0;
-    $pokemonName = $image[$i]->name;
+    $pokemonName = $pokemon_list_color[$i]->name;
+
 
     //renvoie le nombre de pokémons dans le tableau pokemons_species?color=$color
-    echo count($image);
+    echo $pokemon_list_color_length;
+
 
     
     // Instantiate curl
@@ -86,38 +89,16 @@ if(!empty($_GET['color']))
     // Create a new object and filling it with $result stats
     $stats = new stats;
     $stats->updateStats();   
-    echo '<pre>';
-    // print_r($stats->_speed);
-    print_r($stats);
-    echo '<pre>';
-    echo '</br>';
-    for ($i=0; $i < count($result->game_indices); $i++) { 
-       echo $result->game_indices[$i]->version->name.'</br>';
-    } 
+    // echo '<pre>';
+    // // print_r($stats->_speed);
+    // print_r($stats);
+    // echo '<pre>';
+    // echo '</br>';
+    // for ($i=0; $i < count($result->game_indices); $i++) { 
+    //    echo $result->game_indices[$i]->version->name.'</br>';
+    // } 
 }
+
+include 'templates/content.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>pokeAPI</title>
-</head>
-<body>
-    <form action="" method="get">
-        <input type="text" name="color" placeholder="Color" required value="<?= $color ?>">
-        <input type="submit" value="submit">
-    </form>
-    <img src="<?php echo $image_color_front; $i++; ?>" alt="çamarchepô">
-    <img src="<?= $image_color_back ?>" alt="çamarchepô">
-    
-    <div class="pokemon_infos">
-        <div class="pokemon_name"><h5>name</h5><p><?= $name ?></p></div>
 
-        <div class="pokemon_type"><h5>type</h5><p><?= $type ?></p></div>
-    </div>
-
-    <img src="<?= $image_color_front ?>" alt="">
-</body>
-</html>

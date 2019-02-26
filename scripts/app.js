@@ -1,12 +1,12 @@
-console.log('Hello World !');
-
-window
-    .fetch('http://api.openweathermap.org/data/2.5/weather?q=Paris&APPID=9ee23753365e2bc44b4260c6760e94be')
-    .then((_response) =>
-    {
-        return _response.json()
-    })
-    .then((_result) =>
-    {
-        console.log(_result);
-    })
+// // To go further later 
+// let request = new XMLHttpRequest();
+// request.onload = function name()
+// {
+//     let pokemon_list_color = this.responseText;
+//     console.log(pokemon_list_color);
+// }
+// request.open('get', 'index.php', true);
+// request.send();
+// console.log(request);
+pokemon_list_color_length = document.querySelector('#pokemon_list_color_length').value
+console.log(pokemon_list_color_length);
