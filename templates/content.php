@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>pokeAPI</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <form action="" method="get">
@@ -22,6 +24,20 @@
 
     <img src="<?= $image_color_front ?>" alt="">
 
+    <div class="card--container">
+        <div class="card">
+            <p class="card--pokename">pokemonName</p>
+            <img class="card--pokeimage" src="<?= $image_color_front ?>" alt="">
+        </div>
+        <div class="card">
+            <p class="card--pokename"></p>
+            <img class="card--pokeimage" src="" alt="">
+        </div>
+        <div class="card">
+            <p class="card--pokename"></p>
+            <img class="card--pokeimage" src="" alt="">
+        </div>
+    </div>
     <!-- VARIABLES PHP TO JS -->
 
         <input type="hidden" value="<?= $pokemon_list_color_length ?>" id="pokemon_list_color_length">

@@ -10,3 +10,8 @@
 // console.log(request);
 pokemon_list_color_length = document.querySelector('#pokemon_list_color_length').value
 console.log(pokemon_list_color_length);
+
+for (let i = 0; i < 20; i++) {
+    
+    
+}

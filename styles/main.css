@@ -1,0 +1,16 @@
+.card--container
+{
+    display: flex;
+}
+
+.card
+{
+    display: block;
+    height: 100px;
+    width: 300px;
+    background-color: aqua;
+    justify-content: space-around;
+    margin:  0 120px;
+    display: flex;
+    align-items: center;
+}
