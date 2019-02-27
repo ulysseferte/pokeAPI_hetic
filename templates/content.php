@@ -38,6 +38,7 @@
             <img class="card--pokeimage" src="" alt="">
         </div>
     </div>
+    <div></div>
     <!-- VARIABLES PHP TO JS -->
 
         <input type="hidden" value="<?= $pokemon_list_color_length ?>" id="pokemon_list_color_length">
