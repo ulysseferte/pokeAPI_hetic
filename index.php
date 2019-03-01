@@ -70,7 +70,12 @@ if(!empty($_GET['color']))
         $type = $result->types[0]->type->name;
 
         
-        echo $name;
+        echo $name.'</br>';
+
+        // // display each game where the pokemon appears
+        // for ($j=0; $j < count($result->game_indices); $j++) { 
+        //    echo $result->game_indices[$j]->version->name.'</br>';
+        // }     
         // Create a new object and filling it with $result stats
             // If it's the second time or more than the loop goes, doesn't create a new object.
       
@@ -79,15 +84,11 @@ if(!empty($_GET['color']))
             // Update stats of object 
             $stats->updateStats();   
         
-        
 
-        // for ($i=0; $i < count($result->game_indices); $i++) { 
-        //    echo $result->game_indices[$i]->version->name.'</br>';
-        // }     
     }
 }
 
 
 include 'templates/content.php';
-
+?>
 

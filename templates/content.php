@@ -17,12 +17,18 @@
     <img src="<?= $image_color_back ?>" alt="çamarchepô">
     
     <div class="pokemon_infos">
-        <div class="pokemon_name"><h5>name</h5><p><?= $name ?></p></div>
+        <div class="pokemon_name"><h5>name 1</h5><p><?php // if($i == 0){ echo$name;} ?></p></div>
 
-        <div class="pokemon_type"><h5>type</h5><p><?= $type ?></p></div>
+        <div class="pokemon_type"><h5>type 1</h5><p><?= $type ?></p></div>
+    </div>
+    <div class="pokemon_infos">
+        <div class="pokemon_name"><h5>name 2</h5><p><?= $name ?></p></div>
+
+        <div class="pokemon_type"><h5>type 2</h5><p><?= $type ?></p></div>
+
+        <div class="pokemon_games"><h5>games</h5><p></p></div>
     </div>
 
-    <img src="<?= $image_color_front ?>" alt="">
 
     <div class="card--container">
         <div class="card">
