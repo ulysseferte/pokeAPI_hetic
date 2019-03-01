@@ -1,6 +1,7 @@
 <?php 
 //creating the variable as a global because using it in my 'stats' class's function
 global $result;
+// Another used to get every games where a pokemon figures
 
 //if no color is selected, $color=null.
 $color = !empty($_GET['color']) ? $_GET['color'] : null;
@@ -11,7 +12,7 @@ if(!empty($_GET['color']))
 //display pokemon with the correct color
     // Instantiate curl
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, 'https://pokeapi.co/api/v2/pokemon-color/'.$color);
+    curl_setopt($curl, CURLOPT_URL, 'https://pokeapi.co/api/v2/pokemon/'.$color);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($curl);
     curl_close($curl);
@@ -19,12 +20,23 @@ if(!empty($_GET['color']))
     // Json decode
     $result = json_decode($result);
 
-    // Create a variable listing all the pokemons of a specific color
-    $pokemon_list_color = $result->pokemon_species;
-    // Create a variable giving the number of pokemons in the $pokemon_list_color variable
-    $pokemon_list_color_length = count($pokemon_list_color);
-    echo $pokemon_list_color_length;
+    // Binding values of API to variables
 
+    //Sprites
+    $sprites = $result->sprites;
+        $image_color_front = $sprites->front_default;
+        $image_color_back = $sprites->back_default;
+        $image_female_front = $sprites->front_female;
+        $image_female_back = $sprites->back_female;
+        $image_female_shiny_front = $sprites->front_shiny_female;
+        $image_female_shiny_back = $sprites->back_shiny_female;
+        $image_shiny_front = $sprites->front_shiny;
+        $image_shiny_back = $sprites->back_shiny;
+        
+    $name = $result->name;
+    $id = $result->id;
+    $array_games = count($result->game_indices);
+    $type = $result->types[0]->type->name;
     class stats
         {
             public $_speed;
@@ -46,46 +58,9 @@ if(!empty($_GET['color']))
                 $this->_health_points = $result->stats[5]->base_stat;
             }
         }
-
-    for ($i=0; $i < 2; $i++)
-    { 
-        $pokemonName = $pokemon_list_color[$i]->name;
-
-        // Instantiate curl
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'https://pokeapi.co/api/v2/pokemon/'.$pokemonName);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($curl);
-        curl_close($curl);
-        
-        // Json decode
-        $result = json_decode($result);
-    
-        // Binding values of API to variables
-        $sprites = $result->sprites;
-        $image_color_front = $result->sprites->front_default;
-        $image_color_back = $result->sprites->back_default;
-        $name = $result->name;
-        $id = $result->id;
-        $type = $result->types[0]->type->name;
-
-        
-        echo $name.'</br>';
-
-        // // display each game where the pokemon appears
-        // for ($j=0; $j < count($result->game_indices); $j++) { 
-        //    echo $result->game_indices[$j]->version->name.'</br>';
-        // }     
-        // Create a new object and filling it with $result stats
-            // If it's the second time or more than the loop goes, doesn't create a new object.
-      
-            $stats = new stats;
-            
-            // Update stats of object 
-            $stats->updateStats();   
-        
-
-    }
+        $stats = new stats;
+        // Update stats of object 
+        $stats->updateStats();   
 }
 
 
