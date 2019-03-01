@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>pokeAPI</title>
+    <title>PokeAPI</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <!-- Search Bar -->
     <form action="" method="get">
-        <input type="text" name="color" placeholder="Color" required value="<?= $color ?>">
+        <input type="text" name="name" placeholder="Color" required value="<?= $name ?>">
         <input type="submit" value="submit">
     </form>
-    <img src="<?= $image_color_front; ?>" alt="çamarchepô">
+
+    <img src="<?= $image_color_front; ?>" alt="<?= $name.' front sprite'?>">
     <img src="<?= $image_color_back ?>" alt="<?= $name ?>">
     <img src="<?php if($image_female_front == null){echo $image_color_front;} else{echo $image_female_front;} ?>" alt="<?= $name ?>">
     <img src="<?php if($image_female_back == null){echo $image_color_back;} else{echo $image_female_back;} ?>" alt="<?= $name ?>">
@@ -22,11 +24,8 @@
 
     <div class="pokemon_infos">
         <div class="pokemon_id"><h5>ID</h5><p><?= $id ?></p></div>
-
         <div class="pokemon_name"><h5>name</h5><p><?= $name ?></p></div>
-
         <div class="pokemon_type"><h5>type</h5><p><?= $type ?></p></div>
-
         <div class="pokemon_games">
             <h5>games</h5>
             <p>
@@ -39,7 +38,6 @@
             ?>
             </p>
         </div>
-
         <div class="pokemon_stats">
             <h5>Stats</h5>
             <p>HP : <?= $stats->_health_points; ?></p>
@@ -51,6 +49,7 @@
         </div>
     </div>
 
+    <!-- Script in scripts/app.js -->
     <script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>
