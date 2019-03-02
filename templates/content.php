@@ -10,17 +10,22 @@
 </head>
 <body>
     <!-- Search Bar -->
-    <form action="" method="get">
-        <input type="text" name="name" placeholder="Color" required value="<?= $name ?>">
-        <input type="submit" value="submit">
-    </form>
-
-    <img src="<?= $image_color_front; ?>" alt="<?= $name.' front sprite'?>">
-    <img src="<?= $image_color_back ?>" alt="<?= $name ?>">
-    <img src="<?php if($image_female_front == null){echo $image_color_front;} else{echo $image_female_front;} ?>" alt="<?= $name ?>">
-    <img src="<?php if($image_female_back == null){echo $image_color_back;} else{echo $image_female_back;} ?>" alt="<?= $name ?>">
-    <img src="<?= $image_shiny_back ?>" alt="<?= $name ?>">
-    <img src="<?= $image_shiny_front ?>" alt="<?= $name ?>">
+    <div class="searchBarContainer">
+        
+        <form action="" method="get" class="searchBarForm">
+            <input type="text" name="name" placeholder="Looking for a Pokemon's stats ?" required value="<?= $name ?>" class="searchBar">
+            <input type="image" src="pokeball.png" value="submit" class="searchBarSubmit">
+        </form>
+    </div>
+    
+    <div class="sprites">
+        <img src="<?= $image_color_front; ?>" alt="<?= $name.' front sprite'?>">
+        <img src="<?= $image_color_back ?>" alt="<?= $name ?>">
+        <img src="<?php if($image_female_front == null){echo $image_color_front;} else{echo $image_female_front;} ?>" alt="<?= $name ?>">
+        <img src="<?php if($image_female_back == null){echo $image_color_back;} else{echo $image_female_back;} ?>" alt="<?= $name ?>">
+        <img src="<?= $image_shiny_back ?>" alt="<?= $name ?>">
+        <img src="<?= $image_shiny_front ?>" alt="<?= $name ?>">
+    </div>  
 
     <div class="pokemon_infos">
         <div class="pokemon_id"><h5>ID</h5><p><?= $id ?></p></div>
@@ -48,6 +53,7 @@
             <p>Defense Spe. : <?= $stats->_defense; ?></p>
         </div>
     </div>
+    
 
     <!-- Script in scripts/app.js -->
     <script type="text/javascript" src="scripts/app.js"></script>
