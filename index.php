@@ -70,5 +70,6 @@ if(!empty($_GET['name']))
 
 // Including the main content in templates/content.php
 include 'templates/content.php';
+include 'templates/pokeCard.php'
 ?>
 

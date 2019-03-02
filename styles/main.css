@@ -1,0 +1,42 @@
+.searchBarContainer
+{
+   height: 700px; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: url('https://sm.ign.com/ign_za/video/p/pokemon-sw/pokemon-sword-and-shield-trailer-breakdown-gen-8-starters-le_85us.jpg');
+}
+
+.searchBarForm
+{
+    display: flex;
+    align-items: center;
+}
+
+.searchBar
+{
+    width: 600px;
+    height: 50px;
+    font-size: 24px;
+    background-color: rgba(240, 107, 109, 0.349);
+    border-style: none;
+    text-align: center;
+    margin: 10px;
+}
+
+.searchBarSubmit
+{
+    height: 52px;
+    
+}
+
+.sprites
+{
+    display: flex;
+    justify-content: center;
+}
+
+.sprites img
+{
+    padding: 0 50px;
+}
