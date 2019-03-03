@@ -37,7 +37,6 @@ if(!empty($_GET['name']))
     $id = $result->id;
     $types = $result->types;
     $types_slots = count($types);
-    echo $types_slots;
     $type = $result->types[0]->type->name;
 
     ////////////////
