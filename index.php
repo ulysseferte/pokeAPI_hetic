@@ -35,7 +35,176 @@ if(!empty($_GET['name']))
     // Miscellaneous
     $name = $result->name;
     $id = $result->id;
+    $types = $result->types;
+    $types_slots = count($types);
+    echo $types_slots;
     $type = $result->types[0]->type->name;
+
+    ////////////////
+    // SET TYPE 1 //
+    ////////////////
+    if($type == 'normal')
+    {
+        $type = 'images/miniat_type_normal.png';
+    }
+    elseif($type == 'fire')
+    {
+        $type = 'images/miniat_type_feu.png';
+    }
+    elseif($type == 'fighting')
+    {
+        $type = 'images/miniat_type_combat.png';
+    }
+    elseif($type == 'water')
+    {
+        $type = 'images/miniat_type_eau.png';
+    }
+    elseif($type == 'flying')
+    {
+        $type = 'images/miniat_type_vol.png';
+    }
+    elseif($type == 'grass')
+    {
+        $type = 'images/miniat_type_plante.png';
+    }
+    elseif($type == 'poison')
+    {
+        $type = 'images/miniat_type_poison.png';
+    }
+    elseif($type == 'electric')
+    {
+        $type = 'images/miniat_type_electrik.png';
+    }
+    elseif($type == 'ground')
+    {
+        $type = 'images/miniat_type_sol.png';
+    }
+    elseif($type == 'psychic')
+    {
+        $type = 'images/miniat_type_psy.png';
+    }
+    elseif($type == 'rock')
+    {
+        $type = 'images/miniat_type_roche.png';
+    }elseif($type == 'normal')
+    {
+        $type = 'images/miniat_type_normal.png';
+    }
+    elseif($type == 'ice')
+    {
+        $type = 'images/miniat_type_glace.png';
+    }
+    elseif($type == 'bug')
+    {
+        $type = 'images/miniat_type_insecte.png';
+    }
+    elseif($type == 'dragon')
+    {
+        $type = 'images/miniat_type_dragon.png';
+    }
+    elseif($type == 'ghost')
+    {
+        $type = 'images/miniat_type_spectre.png';
+    }
+    elseif($type == 'dark')
+    {
+        $type = 'images/miniat_type_tenebres.png';
+    }
+    elseif($type == 'steel')
+    {
+        $type = 'images/miniat_type_acier.png';
+    }
+    elseif($type == 'fairy')
+    {
+        $type = 'images/miniat_type_fee.png';
+    }
+
+    ////////////////
+    // SET TYPE 2 //
+    ////////////////
+    if($types_slots == 2)
+    {
+        $type2 = $result->types[1]->type->name;
+            if($type2 == 'normal')
+        {
+            $type2 = 'images/miniat_type_normal.png.png';
+        }
+        elseif($type2 == 'fire')
+        {
+            $type2 = 'images/miniat_type_feu.png';
+        }
+        elseif($type2 == 'fighting')
+        {
+            $type2 = 'images/miniat_type_combat.png';
+        }
+        elseif($type2 == 'water')
+        {
+            $type2 = 'images/miniat_type_eau.png';
+        }
+        elseif($type2 == 'flying')
+        {
+            $type2 = 'images/miniat_type_vol.png.png';
+        }
+        elseif($type2 == 'grass')
+        {
+            $type2 = 'images/miniat_type_plante.png';
+        }
+        elseif($type2 == 'poison')
+        {
+            $type2 = 'images/miniat_type_poison.png';
+        }
+        elseif($type2 == 'electric')
+        {
+            $type2 = 'images/miniat_type_electrik.png';
+        }
+        elseif($type2 == 'ground')
+        {
+            $type2 = 'images/miniat_type_sol.png';
+        }
+        elseif($type2 == 'psychic')
+        {
+            $type2 = 'images/miniat_type_psy.png';
+        }
+        elseif($type2 == 'rock')
+        {
+            $type2 = 'images/miniat_type_roche.png';
+        }elseif($type2 == 'normal')
+        {
+            $type2 = 'images/miniat_type_normal.png';
+        }
+        elseif($type2 == 'ice')
+        {
+            $type2 = 'images/miniat_type_glace.png';
+        }
+        elseif($type2 == 'bug')
+        {
+            $type2 = 'images/miniat_type_insecte.png';
+        }
+        elseif($type2 == 'dragon')
+        {
+            $type2 = 'images/miniat_type_dragon.png';
+        }
+        elseif($type2 == 'ghost')
+        {
+            $type2 = 'images/miniat_type_spectre.png';
+        }
+        elseif($type2 == 'dark')
+        {
+            $type2 = 'images/miniat_type_tenebres.png';
+        }
+        elseif($type2 == 'steel')
+        {
+            $type2 = 'images/miniat_type_acier.png';
+        }
+        elseif($type2 == 'fairy')
+        {
+            $type2 = 'images/miniat_type_fee.png';
+        }
+    }
+    else
+    {
+        $type2 = null;
+    }
     // Length of game_indices (API's array)
     $array_games = count($result->game_indices);
 

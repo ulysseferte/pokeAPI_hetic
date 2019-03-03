@@ -14,10 +14,16 @@
         
         <form action="" method="get" class="searchBarForm">
             <input type="text" name="name" placeholder="Looking for a Pokemon's stats ?" required value="<?= $name ?>" class="searchBar">
-            <input type="image" src="pokeball.png" value="submit" class="searchBarSubmit">
+            <input type="image" src="images/pokeball.png" value="submit" class="searchBarSubmit">
         </form>
     </div>
-    
+    <div class="headerInfos">
+        <div class="pokemon_name"><p><?= $name ?></p></div>
+        <div class="pokemon_id"><p><?= '#'.$id ?></p></div>
+        <img src="<?= $type ?>" alt="<?= $type ?>" class="pokemon_type">
+        <img src="<?= $type2 ?>" alt="<?= $type2 ?>" class="pokemon_type">
+    </div>
+
     <div class="sprites">
         <img src="<?= $image_color_front; ?>" alt="<?= $name.' front sprite'?>">
         <img src="<?= $image_color_back ?>" alt="<?= $name ?>">
@@ -28,11 +34,9 @@
     </div>  
 
     <div class="pokemon_infos">
-        <div class="pokemon_id"><h5>ID</h5><p><?= $id ?></p></div>
-        <div class="pokemon_name"><h5>name</h5><p><?= $name ?></p></div>
-        <div class="pokemon_type"><h5>type</h5><p><?= $type ?></p></div>
         <div class="pokemon_games">
             <h5>games</h5>
+            <br>
             <p>
             <?php
             for ($i=0; $i < $array_games; $i++)
@@ -45,6 +49,7 @@
         </div>
         <div class="pokemon_stats">
             <h5>Stats</h5>
+            <br>
             <p>HP : <?= $stats->_health_points; ?></p>
             <p>Speed : <?= $stats->_speed; ?></p>
             <p>Attack : <?= $stats->_attack; ?></p>
