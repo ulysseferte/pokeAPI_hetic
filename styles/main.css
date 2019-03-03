@@ -18,7 +18,8 @@
     width: 600px;
     height: 50px;
     font-size: 24px;
-    background-color: rgba(240, 107, 109, 0.349);
+    background-color: rgba(248, 248, 248, 0.589);
+    color: #111111;
     border-style: none;
     text-align: center;
     margin: 10px;
@@ -26,8 +27,23 @@
 
 .searchBarSubmit
 {
-    height: 52px;
-    
+    height: 52px;   
+}
+
+.headerInfos
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerInfos p
+{
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 900;
+    padding: 5px 5px 0 5px;
 }
 
 .sprites
@@ -39,4 +55,23 @@
 .sprites img
 {
     padding: 0 50px;
+}
+
+.pokemon_infos
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pokemon_infos div
+{
+    padding: 30px 100px 0 100px;
+}
+
+.pokemon_infos div h5
+{
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 700;
 }
